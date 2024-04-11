@@ -1,0 +1,32 @@
+[
+ {
+  "nome": "Trilha da Cachoeira",
+  "cidadeEstado": "São Paulo, SP",
+  "duracao": "120",
+  "trajeto": "Circular",
+  "dificuldade": "Moderada",
+  "tipoTrilha": "Cachoeira",
+  "criador": "Paulo Silva",
+  "urlImagem": "https://images.pexels.com/photos/5015429/pexels-photo-5015429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+ },
+ {
+  "nome": "Trilha da Montanha",
+  "cidadeEstado": "Rio de Janeiro, RJ",
+  "duracao": "180",
+  "trajeto": "Ida e Volta",
+  "dificuldade": "Difícil",
+  "tipoTrilha": "Montanha",
+  "criador": "Eduarda Oliveira",
+  "urlImagem": "https://images.pexels.com/photos/4867340/pexels-photo-4867340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+ },
+ {
+  "nome": "Trilha da Mata",
+  "cidadeEstado": "Florianópolis, SC",
+  "duracao": "60",
+  "trajeto": "Circular",
+  "dificuldade": "Fácil",
+  "tipoTrilha": "Mata",
+  "criador": "Carlos Lima",
+  "urlImagem": "https://images.pexels.com/photos/14333456/pexels-photo-14333456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+ }
+]

@@ -1,29 +1,58 @@
-import * as PropTypes from "prop-types"
-import "./style.css"
+import * as PropTypes from "prop-types";
+import "./style.css";
+import { useState, useEffect } from "react";
+// import trilha from "./trilha.json";
 
-function CardTrilha({dadosTrilha}){
-    return(
-        <div className="card_container">
-            <h1>{dadosTrilha.nomeTrilha}</h1>
-            <span>{dadosTrilha.cidade} / {dadosTrilha.estado}</span>
-            <img width={200} src={dadosTrilha.urlImagem} alt="imagem trilha" />
-        </div>
-    )
+function CardTrilha() {
+ const [card, setCard] = useState(null);
+
+ useEffect(() => {
+  const obterCard = async () => {
+   try {
+    const resposta = await fetch("./trilha.json");
+    if (!resposta.ok) {
+     throw new Error("Erro ao obter os dados");
+    }
+    const dadosJson = await resposta.json();
+    setCard(dadosJson);
+   } catch (erro) {
+    console.error(erro);
+   }
+  };
+  obterCard();
+ }, []);
+
+ return (
+  <div className="card_container">
+   {card && (
+    <ul>
+     {card.map((item, index) => (
+      <li key={index}>
+       <h1>Trilha: {item.nome}</h1>
+       <p>Cidade: {item.cidadeEstado}</p>
+       <img width={200} src={item.urlImagem} alt="imagem trilha" />
+       {/* Adicione aqui outras propriedades que deseja exibir */}
+      </li>
+     ))}
+    </ul>
+   )}
+  </div>
+ );
 }
 
 CardTrilha.propTypes = {
-    dadosTrilha: PropTypes.exact({
-        nomeTrilha: PropTypes.string.isRequired,
-        cidade: PropTypes.string,
-        estado: PropTypes.string,
-        duracao: PropTypes.number,
-        trajeto: PropTypes.number,
-        dificuldade: PropTypes.string,
-        tipo: PropTypes.string,
-        nomeUsuario: PropTypes.string,
-        urlImagem: PropTypes.string
-    })
-}
+ dadosTrilha: PropTypes.exact({
+  nomeTrilha: PropTypes.string.isRequired,
+  cidade: PropTypes.string,
+  estado: PropTypes.string,
+  duracao: PropTypes.number,
+  trajeto: PropTypes.number,
+  dificuldade: PropTypes.string,
+  tipo: PropTypes.string,
+  nomeUsuario: PropTypes.string,
+  urlImagem: PropTypes.string
+ })
+};
 
 // prop-type
 
