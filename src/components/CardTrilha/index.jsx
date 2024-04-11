@@ -27,10 +27,11 @@ function CardTrilha() {
    {card && (
     <ul>
      {card.map((item, index) => (
-      <li key={index}>
-       <h1>Trilha: {item.nome}</h1>
-       <p>Cidade: {item.cidadeEstado}</p>
+      <li key={index} className="colunas">
        <img width={200} src={item.urlImagem} alt="imagem trilha" />
+       <h2>Trilha: {item.nome}</h2>
+       <p>Cidade: {item.cidadeEstado}</p>
+
        {/* Adicione aqui outras propriedades que deseja exibir */}
       </li>
      ))}

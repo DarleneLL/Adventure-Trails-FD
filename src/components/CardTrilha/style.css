@@ -1,3 +1,23 @@
-.card_container{
-    display: flex;
+.card_container {
+ display: flex;
+ border-radius: 5px;
+ border-color: cadetblue;
+ background-color: rgb(193, 222, 212);
+ margin-right: 15px;
+}
+
+.colunas {
+ display: flex;
+ flex-direction: row;
+ margin: 20px;
+ background-color: rgb(249, 246, 243);
+}
+
+.colunas h2 {
+ color: cadetblue;
+ padding-left: 10px;
+}
+
+.colunas p {
+ margin: 10px;
 }
