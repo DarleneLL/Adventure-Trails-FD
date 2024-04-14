@@ -1,3 +1,4 @@
+import Navbar from "../Navbar";
 import "./style.css";
 
 function Header() {
@@ -5,8 +6,7 @@ function Header() {
   <header className="header">
    <p>Adventure Trolls FD</p>
    <div className="menuHeader">
-    <a href="#">Explorar Trilhas</a>
-    <a href="#">Cadastrar Trilhas</a>
+    <Navbar />
    </div>
   </header>
  );
