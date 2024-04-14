@@ -1,8 +1,7 @@
 import * as PropTypes from "prop-types";
 import "./style.css";
 import { useState, useEffect } from "react";
-// import trilha from "./trilha.json";
-
+import { Button } from "@mui/material";
 function CardTrilha() {
  const [card, setCard] = useState(null);
 
@@ -33,6 +32,7 @@ function CardTrilha() {
        <p>Cidade: {item.cidadeEstado}</p>
 
        {/* Adicione aqui outras propriedades que deseja exibir */}
+       <Button>Trilha</Button>
       </li>
      ))}
     </ul>
