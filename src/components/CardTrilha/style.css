@@ -1,9 +1,12 @@
+* {
+ margin: 0;
+}
+
 .card_container {
  display: flex;
  border-radius: 5px;
  border-color: cadetblue;
  background-color: rgb(193, 222, 212);
- margin-right: 15px;
 }
 
 .colunas {

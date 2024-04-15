@@ -1,10 +1,11 @@
 import Header from "../components/Header";
+import BodyHome from "../components/BodyHome/BodyHome";
 
 function Home() {
  return (
   <>
    <Header />
-   <h1>Página Inicial das Trilhas</h1>;
+   <BodyHome />
   </>
  );
 }

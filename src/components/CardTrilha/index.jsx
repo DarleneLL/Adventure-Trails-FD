@@ -32,7 +32,6 @@ function CardTrilha() {
        <p>Cidade: {item.cidadeEstado}</p>
 
        {/* Adicione aqui outras propriedades que deseja exibir */}
-       <Button>Trilha</Button>
       </li>
      ))}
     </ul>
