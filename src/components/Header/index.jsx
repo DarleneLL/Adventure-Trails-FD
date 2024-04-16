@@ -1,16 +1,10 @@
-import Navbar from "../Navbar";
+import Navbar from "../Navbar/Navbar";
 import "./style.css";
 import { Button } from "@mui/material";
 
 function Header() {
  return (
   <header className="headerContainer">
-   <div className="headerItens">
-    <p>Adventure Trolls FD</p>
-    <div className="menuHeader">
-     <Navbar />
-    </div>
-   </div>
    <p className="textHeader">Que tal aproveitar um tempo com a natureza?</p>
    <p className="textBody">
     Junte-se à comunidade de entusiastas ao ar livre, compartilhe suas aventuras

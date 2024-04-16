@@ -14,7 +14,7 @@ function BodyHome() {
      detalhadas sobre cada trilha, incluindo distância, dificuldade, pontos de
      interesse naturais e dicas úteis para uma experiência eco-friendly.
     </p>
-    <Button variant="contained" color="success" sx={{ ml: 45 }}>
+    <Button variant="contained" color="success" sx={{ ml: 20 }}>
      Explore Trilhas
     </Button>
    </div>

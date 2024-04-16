@@ -10,15 +10,21 @@ import Cadastro from "./pages/Cadastro.jsx";
 const routers = createBrowserRouter([
  {
   path: "/",
-  element: <Home />
- },
- {
-  path: "/cadastro",
-  element: <Cadastro />
- },
- {
-  path: "/lista",
-  element: <Trilhas />
+  element: <App />,
+  children: [
+   {
+    path: "/",
+    element: <Home />
+   },
+   {
+    path: "/cadastro",
+    element: <Cadastro />
+   },
+   {
+    path: "/lista",
+    element: <Trilhas />
+   }
+  ]
  }
 ]);
 

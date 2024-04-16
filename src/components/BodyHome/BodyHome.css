@@ -1,17 +1,11 @@
 .container {
- margin-top: 50px;
+ margin-top: 10px;
  margin-left: 25px;
 }
 
 .container1 h1 {
- width: 904px;
- height: 71px;
- top: 1149px;
- left: 83px;
- gap: 0px;
- opacity: 0px;
  font-family: Montserrat;
- font-size: 38px;
+ font-size: 30px;
  font-weight: 400;
  line-height: 72px;
  letter-spacing: -0.015em;
@@ -26,17 +20,17 @@
  letter-spacing: -0.015em;
  text-align: left;
  color: #000000cc;
- margin-bottom: 30px;
+ margin-bottom: 20px;
 }
 
 .container2 {
  display: flex;
  justify-content: space-between;
- margin-top: 50px;
+ margin-top: 10px;
 }
 
 .container2 p {
- height: 127px;
+ height: 110px;
  width: 290px;
  font-family: Montserrat;
  font-size: 28px;

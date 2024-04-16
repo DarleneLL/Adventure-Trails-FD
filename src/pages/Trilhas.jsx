@@ -4,7 +4,6 @@ import CardTrilha from "../components/CardTrilha";
 function Trilhas() {
  return (
   <>
-   <Header />
    <CardTrilha />
   </>
  );
