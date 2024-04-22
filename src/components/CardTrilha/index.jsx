@@ -15,44 +15,6 @@ function CardTrilha({ dadosTrilha }) {
   </div>
  );
 }
-// function CardTrilha() {
-//  const { trilhas, setTrilhas } = useContext(TrilhasContext);
-//  const [card, setCard] = useState(null);
-
-//  useEffect(() => {
-//   const obterCard = async () => {
-//    try {
-//     const resposta = await fetch("./trilha.json");
-//     if (!resposta.ok) {
-//      throw new Error("Erro ao obter os dados");
-//     }
-//     const dadosJson = await resposta.json();
-//     setCard(dadosJson);
-//    } catch (erro) {
-//     console.error(erro);
-//    }
-//   };
-//   obterCard();
-//  }, []);
-
-//  return (
-//   <div className="card_container">
-//    {card && (
-//     <ul>
-//      {card.map((item, index) => (
-//       <li key={index} className="colunas">
-//        <img width={200} src={item.urlImagem} alt="imagem trilha" />
-//        <h2>Trilha: {item.nome}</h2>
-//        <p>Cidade: {item.cidadeEstado}</p>
-
-//        {/* Adicione aqui outras propriedades que deseja exibir */}
-//       </li>
-//      ))}
-//     </ul>
-//    )}
-//   </div>
-//  );
-// }
 
 CardTrilha.propTypes = {
  dadosTrilha: PropTypes.exact({

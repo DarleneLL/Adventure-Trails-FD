@@ -1,4 +1,3 @@
-import Navbar from "../Navbar/Navbar";
 import "./style.css";
 import { Button } from "@mui/material";
 
