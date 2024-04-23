@@ -11,7 +11,7 @@ function CardTrilha({ dadosTrilha }) {
     alt="imagem trilha"
    />
    <h1>{dadosTrilha.nome}</h1>
-   <span>{dadosTrilha.cidadeEstado}</span>
+   <span>{dadosTrilha.cidade}</span>
   </div>
  );
 }
@@ -19,7 +19,8 @@ function CardTrilha({ dadosTrilha }) {
 CardTrilha.propTypes = {
  dadosTrilha: PropTypes.exact({
   nome: PropTypes.string.isRequired,
-  cidadeEstado: PropTypes.string,
+  cidade: PropTypes.string,
+  estado: PropTypes.string,
   duracao: PropTypes.number,
   trajeto: PropTypes.number,
   dificuldade: PropTypes.string,

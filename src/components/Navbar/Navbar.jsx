@@ -8,7 +8,7 @@ function Navbar() {
    <div className="menuHeader">
     <Link to="/">Home</Link>
     <Link to="/cadastro">Cadastro Trilhas</Link>
-    <Link to="/lista">Trilhas</Link>
+    <Link to="/trilhas">Trilhas</Link>
    </div>
   </nav>
  );

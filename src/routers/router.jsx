@@ -20,7 +20,7 @@ const routers = createBrowserRouter([
     element: <Cadastro />
    },
    {
-    path: "/lista",
+    path: "/trilhas",
     element: <Trilhas />
    }
   ]

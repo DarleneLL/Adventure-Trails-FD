@@ -7,75 +7,94 @@ import {
  PageTitle
 } from "./styles";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { TrilhasContext } from "../../context/TrilhasContext";
+import { useNavigate } from "react-router-dom";
 
 function PaginaCadastroTrilha() {
- const { register } = useForm();
+ const { register, handleSubmit } = useForm();
+ const { addTrail } = useContext(TrilhasContext);
+ const navigate = useNavigate();
+
+ function sendForm(formValue) {
+  console.log(formValue);
+  addTrail({
+   ...formValue,
+   duracao: Number(formValue.duracao),
+   trajeto: Number(formValue.trajeto)
+  });
+
+  navigate("/trilhas");
+ }
 
  return (
   <PageContainer>
    <PageTitle>Cadastro de Nova Trilha</PageTitle>
-   <FormComponent>
+   <FormComponent onSubmit={handleSubmit(sendForm)}>
     <InputWrapper>
-     <label htmlFor="name">Nome da Trilha</label>
+     <label htmlFor="nome">Nome da Trilha</label>
      <input
       type="text"
-      {...register("name", {
+      {...register("nome", {
        required: "Campo obrigatório",
        maxLength: { value: 100, message: "máximo 100 caracteres" }
       })}
      />
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="estimated-duration"> Duração Estimada (min):</label>
+     <label htmlFor="duracao"> Duração Estimada (min):</label>
      <input
       type="number"
-      {...register("estimated-duration", {
+      {...register("duracao", {
        required: "Campo obrigatório"
       })}
      />
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="route-size">Trajeto (km):</label>
+     <label htmlFor="trajeto">Trajeto (km):</label>
      <input
       type="number"
-      {...register("route-size", {
+      {...register("trajeto", {
        required: "Campo obrigatório"
       })}
      />
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="city">Cidade:</label>
+     <label htmlFor="cidade">Cidade:</label>
      <input
       type="text"
-      {...register("city", {
+      {...register("cidade", {
        required: "Campo obrigatório",
        maxLength: { value: 60, message: "máximo 60 caracteres" }
       })}
      />
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="state">Estado</label>
+     <label htmlFor="estado">Estado</label>
      <input
       type="text"
-      {...register("text", {
+      {...register("estado", {
        required: "Campo obrigatório",
        maxLength: { value: 2, message: "máximo 2 caracteres" }
       })}
      />
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="username">Nome Completo do Usuário:</label>
+     <label htmlFor="criador">Nome Completo do Usuário:</label>
      <input
       type="text"
-      {...register("username", {
+      {...register("criador", {
        required: "Campo obrigatório",
        maxLength: { value: 60, message: "máximo 60 caracteres" }
       })}
      />
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="difficult">Dificuldade:</label>
-     <select name="difficult">
+     <label htmlFor="dificuldade">Dificuldade:</label>
+     <select
+      {...register("dificuldade", {
+       required: "Campo obrigatório"
+      })}>
       <option value="">Selecione...</option>
       <option value="facil">Fácil</option>
       <option value="medio">Médio</option>
@@ -83,8 +102,11 @@ function PaginaCadastroTrilha() {
      </select>
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="dificult">Tipo da Trilha:</label>
-     <select name="tipoTrilha">
+     <label htmlFor="tipoTrilha">Tipo da Trilha:</label>
+     <select
+      {...register("tipoTrilha", {
+       required: "Campo obrigatório"
+      })}>
       <option value="">Selecione...</option>
       <option value="caminhada">Caminhada</option>
       <option value="corrida">Corrida</option>
@@ -92,20 +114,20 @@ function PaginaCadastroTrilha() {
      </select>
     </InputWrapper>
     <InputWrapper>
-     <label htmlFor="urlImage">Tipo da Trilha:</label>
+     <label htmlFor="urlImagem">Tipo da Trilha:</label>
      <input
       type="text"
-      {...register("urlImage", {
+      {...register("urlImagem", {
        maxLength: { value: 300, message: "máximo 300 caracteres" }
       })}
      />
     </InputWrapper>
 
     <ButtonsWrapper>
-     <Button variant="outlined" type="button">
+     <Button variant="outlined" type="submit">
       Cadastrar
      </Button>
-     <Button variant="outlined" type="button">
+     <Button variant="outlined" type="submit">
       Voltar para Home
      </Button>
     </ButtonsWrapper>
