@@ -10,8 +10,17 @@ function CardTrilha({ dadosTrilha }) {
     src={dadosTrilha.urlImagem}
     alt="imagem trilha"
    />
-   <h1>{dadosTrilha.nome}</h1>
-   <span>{dadosTrilha.cidade}</span>
+
+   <div className="dadosTrilha">
+    <h1>{dadosTrilha.nome}</h1>
+    <p>
+     {dadosTrilha.cidade} / {dadosTrilha.estado}
+    </p>
+    <p>{dadosTrilha.duracao} min</p>
+    <p>{dadosTrilha.trajeto} km</p>
+    <p>{dadosTrilha.dificuldade}</p>
+    <p>{dadosTrilha.tipoTrilha}</p>
+   </div>
   </div>
  );
 }

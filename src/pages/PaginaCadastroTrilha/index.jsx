@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+
 import {
  ButtonsWrapper,
  FormComponent,
@@ -12,7 +13,11 @@ import { TrilhasContext } from "../../context/TrilhasContext";
 import { useNavigate } from "react-router-dom";
 
 function PaginaCadastroTrilha() {
- const { register, handleSubmit } = useForm();
+ const {
+  register,
+  handleSubmit,
+  formState: { errors }
+ } = useForm();
  const { addTrail } = useContext(TrilhasContext);
  const navigate = useNavigate();
 
@@ -40,6 +45,7 @@ function PaginaCadastroTrilha() {
        maxLength: { value: 100, message: "máximo 100 caracteres" }
       })}
      />
+     {errors?.nome && <p>{errors.nome?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="duracao"> Duração Estimada (min):</label>
@@ -49,6 +55,7 @@ function PaginaCadastroTrilha() {
        required: "Campo obrigatório"
       })}
      />
+     {errors?.duracao && <p>{errors.duracao?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="trajeto">Trajeto (km):</label>
@@ -58,6 +65,7 @@ function PaginaCadastroTrilha() {
        required: "Campo obrigatório"
       })}
      />
+     {errors?.trajeto && <p>{errors.trajeto?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="cidade">Cidade:</label>
@@ -68,6 +76,7 @@ function PaginaCadastroTrilha() {
        maxLength: { value: 60, message: "máximo 60 caracteres" }
       })}
      />
+     {errors?.cidade && <p>{errors.cidade?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="estado">Estado</label>
@@ -78,6 +87,7 @@ function PaginaCadastroTrilha() {
        maxLength: { value: 2, message: "máximo 2 caracteres" }
       })}
      />
+     {errors?.estado && <p>{errors.estado?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="criador">Nome Completo do Usuário:</label>
@@ -88,6 +98,7 @@ function PaginaCadastroTrilha() {
        maxLength: { value: 60, message: "máximo 60 caracteres" }
       })}
      />
+     {errors?.criador && <p>{errors.criador?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="dificuldade">Dificuldade:</label>
@@ -100,6 +111,7 @@ function PaginaCadastroTrilha() {
       <option value="medio">Médio</option>
       <option value="dificil">Difícil</option>
      </select>
+     {errors?.dificuldade && <p>{errors.dificuldade?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="tipoTrilha">Tipo da Trilha:</label>
@@ -112,6 +124,7 @@ function PaginaCadastroTrilha() {
       <option value="corrida">Corrida</option>
       <option value="ciclismo">Ciclismo</option>
      </select>
+     {errors?.tipoTrilha && <p>{errors.tipoTrilha?.message}</p>}
     </InputWrapper>
     <InputWrapper>
      <label htmlFor="urlImagem">Tipo da Trilha:</label>
@@ -121,13 +134,14 @@ function PaginaCadastroTrilha() {
        maxLength: { value: 300, message: "máximo 300 caracteres" }
       })}
      />
+     {errors?.urlImagem && <p>{errors.urlImagem?.message}</p>}
     </InputWrapper>
 
     <ButtonsWrapper>
-     <Button variant="outlined" type="submit">
+     <Button variant="contained" type="submit" color="success">
       Cadastrar
      </Button>
-     <Button variant="outlined" type="submit">
+     <Button variant="contained" type="submit" color="success">
       Voltar para Home
      </Button>
     </ButtonsWrapper>

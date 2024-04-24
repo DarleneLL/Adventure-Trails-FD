@@ -4,7 +4,7 @@ export const PageContainer = styled("div")({
  display: "flex",
  flexDirection: "column",
  alignItems: "center",
- padding: "3rem 5rem 10rem",
+ padding: "3rem 5rem 3rem",
  background: "#D8E3D2"
 });
 
@@ -51,15 +51,3 @@ export const ButtonsWrapper = styled("div")({
  flexDirection: "row",
  gap: "1rem"
 });
-// export const FormComponent = styled("form")({
-//  display: "flex",
-//  flexDirection: "column",
-//  justifyContent: "center",
-//  gap: "1rem",
-//  width: "20rem"
-// });
-
-// export const InputWrapper = styled("div")({
-//  display: "flex",
-//  flexDirection: "column"
-// });
