@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import { useEffect } from "react";
 
 import {
  ButtonsWrapper,
@@ -21,8 +22,11 @@ function PaginaCadastroTrilha() {
  const { addTrail } = useContext(TrilhasContext);
  const navigate = useNavigate();
 
+ const handleNavigateHome = () => {
+  navigate("/");
+ };
+
  function sendForm(formValue) {
-  console.log(formValue);
   addTrail({
    ...formValue,
    duracao: Number(formValue.duracao),
@@ -141,7 +145,7 @@ function PaginaCadastroTrilha() {
      <Button variant="contained" type="submit" color="success">
       Cadastrar
      </Button>
-     <Button variant="contained" type="submit" color="success">
+     <Button variant="contained" onClick={handleNavigateHome} color="success">
       Voltar para Home
      </Button>
     </ButtonsWrapper>

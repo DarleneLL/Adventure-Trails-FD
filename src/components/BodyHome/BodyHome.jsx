@@ -1,7 +1,18 @@
 import "./BodyHome.css";
 import { Button } from "@mui/material";
+// import NavPagTrilhas from "../../Navegação/navPagTrilhas";
+import { useNavigate } from "react-router-dom";
 
 function BodyHome() {
+ const navigate = useNavigate();
+
+ const handleNavigateTrilhas = () => {
+  navigate("/trilhas");
+ };
+
+ const handleNavigateCadastro = () => {
+  navigate("/Cadastro");
+ };
  return (
   <div className="container">
    <div className="container1">
@@ -14,14 +25,24 @@ function BodyHome() {
      detalhadas sobre cada trilha, incluindo distância, dificuldade, pontos de
      interesse naturais e dicas úteis para uma experiência eco-friendly.
     </p>
-    <Button variant="contained" color="success" sx={{ ml: 20 }}>
+    <Button
+     variant="contained"
+     href="#retTrilhas"
+     color="success"
+     sx={{ ml: 20 }}
+     onClick={handleNavigateTrilhas}>
      Explore Trilhas
     </Button>
    </div>
    <div className="container2">
     <div>
      <p>Compartilhe fotos, dicas e localização das suas trilhas favoritas</p>
-     <Button variant="contained" color="success" sx={{ ml: 20 }}>
+     <Button
+      variant="contained"
+      href="#pagCadastro"
+      color="success"
+      sx={{ ml: 20 }}
+      onClick={handleNavigateCadastro}>
       Cadastra Trilha
      </Button>
     </div>
